@@ -103,10 +103,18 @@ class Index extends React.Component {
                 >
                   /blog
                 </Link>
-                <External href={`https://github.com/${social.github}`}>Github</External>
-                <External href={`https://gitlab.com/${social.gitlab}`}>Gitlab</External>
-                <External href={`https://twitter.com/${social.twitter}`}>Twitter</External>
-                <External href={`https://suzuri.jp/${social.suzuri}`}>Goods</External>
+                <External href={`https://github.com/${social.github}`}>
+                  Github
+                </External>
+                <External href={`https://gitlab.com/${social.gitlab}`}>
+                  Gitlab
+                </External>
+                <External href={`https://twitter.com/${social.twitter}`}>
+                  Twitter
+                </External>
+                <External href={`https://suzuri.jp/${social.suzuri}`}>
+                  Goods
+                </External>
               </h3>
             </Links>
           </Right>

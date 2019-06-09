@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { rhythm } from "../utils/typography"
-import { breakLarge } from "../utils/valiables"
+import { maxWidth, breakLarge } from "../utils/valiables"
 
 const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
+  max-width: ${maxWidth};
   padding: ${rhythm(1.0)} ${rhythm(3 / 4)};
 
   h1 {

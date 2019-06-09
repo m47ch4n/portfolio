@@ -56,6 +56,18 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `m47ch4n's HOME`,
+        short_name: `m47ch4n's HOME`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#AA3939`,
+        display: `minimal-ui`,
+        icon: `content/assets/m47ch4n.png`,
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
