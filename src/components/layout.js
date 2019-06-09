@@ -1,7 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+import { breakLarge } from "../utils/valiables"
+
+const Container = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: ${rhythm(1.0)} ${rhythm(3 / 4)};
+
+  h1 {
+    font-size: 3.5rem;
+  }
+`
+
+const Footer = styled.footer`
+  display: flex;
+  margin-top: 3rem;
+  font-size: 12px;
+
+  @media screen and (max-width: ${breakLarge}) {
+    display: block;
+  }
+`
 
 class Layout extends React.Component {
   render() {
@@ -13,7 +36,6 @@ class Layout extends React.Component {
       header = (
         <h1
           style={{
-            ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
@@ -52,22 +74,15 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <Container>
         <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
+        {children}
+        <Footer>
+          © {new Date().getFullYear()} {` `}
+          <a href="https://www.m47ch4n.net">m47ch4n</a>, {` `} Built with {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+        </Footer>
+      </Container>
     )
   }
 }
