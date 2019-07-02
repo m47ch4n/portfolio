@@ -104,10 +104,10 @@ class Index extends React.Component {
                   /blog
                 </Link>
                 <External href={`https://github.com/${social.github}`}>
-                  Github
+                  GitHub
                 </External>
                 <External href={`https://gitlab.com/${social.gitlab}`}>
-                  Gitlab
+                  GitLab
                 </External>
                 <External href={`https://twitter.com/${social.twitter}`}>
                   Twitter
