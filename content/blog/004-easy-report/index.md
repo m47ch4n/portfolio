@@ -24,7 +24,7 @@ Markdown Preview Enhancedは数式、レイアウト、mermaidによるグラフ
 
 コードもMarkdownなのでシンプルに貼り付けるだけ。
 
-Markdownで書きたけど、LaTeXのようにしっかりとした組版システムを使いたい場合、[Pandoc]https://pandoc.org/)というものもあるらしい。
+Markdownで書きたけど、LaTeXのようにしっかりとした組版システムを使いたい場合、[Pandoc](https://pandoc.org/)というものもあるらしい。
 
 - [学位論文を書く準備 - プらチナの日記](https://blog.8tak4.com/post/168232661994/know-how-writing-thesis-markdown)
 
