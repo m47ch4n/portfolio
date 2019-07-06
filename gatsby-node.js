@@ -5,6 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const picPost = path.resolve(`./src/templates/pic-post.js`)
   return graphql(
     `
       {
@@ -17,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 title
                 slug
+                type
               }
             }
           }
@@ -35,9 +37,18 @@ exports.createPages = ({ graphql, actions }) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
 
+      let postComponent = null;
+      switch (post.node.frontmatter.type) {
+        case "pic":
+          postComponent = picPost
+          break
+        default:
+          postComponent = blogPost
+          break
+      }
       createPage({
         path: post.node.frontmatter.slug,
-        component: blogPost,
+        component: postComponent,
         context: {
           slug: post.node.frontmatter.slug,
           previous,
