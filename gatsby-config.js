@@ -9,6 +9,7 @@ module.exports = {
       gitlab: `m47ch4n`,
       twitter: `m47ch4n`,
       suzuri: `m47ch4n`,
+      bookmeter: `1023421`,
     },
   },
   plugins: [

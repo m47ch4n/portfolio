@@ -115,6 +115,9 @@ class Index extends React.Component {
                 <External href={`https://suzuri.jp/${social.suzuri}`}>
                   Goods
                 </External>
+                <External href={`https://bookmeter.com/users/${social.bookmeter}`}>
+                  Reading
+                </External>
               </h3>
             </Links>
           </Right>
@@ -136,6 +139,7 @@ export const pageQuery = graphql`
           gitlab
           twitter
           suzuri
+          bookmeter
         }
       }
     }
