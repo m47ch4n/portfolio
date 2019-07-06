@@ -14,7 +14,7 @@ slug: "/blog/easy-report/"
 
 Markdown Preview Enhancedは数式、レイアウト、mermaidによるグラフ、PlantUMLによるUML、PDFやHTMLでの出力などを提供する拡張機能。
 
-![Index](./index.png)
+![Index](./markdown.png)
 
 数式のデフォルトレンダラはKaTeX。とにかく速いらしい！
 
