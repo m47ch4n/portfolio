@@ -43,7 +43,7 @@ class WorksIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Works" />
         {posts.map(({ node }) => 
-          <Work key={node.frontmatter.slug} node={node} />
+          <Work key={node.frontmatter.title} node={node} />
         )}
       </Layout>
     )
