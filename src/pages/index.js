@@ -103,6 +103,17 @@ class Index extends React.Component {
                 >
                   /blog
                 </Link>
+                <Link
+                  style={{
+                    boxShadow: `none`,
+                    display: "inline-block",
+                    marginLeft: "12px",
+                    marginBottom: "8px",
+                  }}
+                  to="/works"
+                >
+                  /works
+                </Link>
                 <External href={`https://github.com/${social.github}`}>
                   GitHub
                 </External>

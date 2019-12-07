@@ -1,12 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const Blog = ({node}) => {
+const Work = ({node}) => {
   const title = node.frontmatter.title || node.frontmatter.slug
   return (
     <div>
@@ -15,9 +15,9 @@ const Blog = ({node}) => {
           marginBottom: rhythm(1 / 4),
         }}
       >
-        <Link style={{ boxShadow: `none` }} to={node.frontmatter.slug}>
+        <a style={{boxShadow: 'none'}} href={node.frontmatter.url}>
           {title}
-        </Link>
+        </a>
       </h3>
       <small>{node.frontmatter.date}</small>
       <p
@@ -25,40 +25,15 @@ const Blog = ({node}) => {
           __html: node.frontmatter.description || node.excerpt,
         }}
       />
-    </div>
-  )
-}
-
-const Pic = ({node}) => {
-  const title = node.frontmatter.title || node.frontmatter.slug
-  return (
-    <div>
-      <h3
-        style={{
-          marginBottom: rhythm(1 / 4),
-        }}
-      >
-        <Link style={{ boxShadow: `none` }} to={node.frontmatter.slug}>
-          {title}
-        </Link>
-      </h3>
-      <small>{node.frontmatter.date}</small>
-      <small>{` `}</small>
-      <small>{node.frontmatter.description || node.excerpt}</small>
       <Img
-        imgStyle={{height: "150px"}}
-        style={{
-          height: "150px",
-          margin: "0 -1.3125rem",
-        }}
         durationFadeIn={1000}
-        fluid={node.frontmatter.pic.childImageSharp.fluid}
+        fluid={node.frontmatter.logo.childImageSharp.fluid}
       />
     </div>
   )
 }
 
-class BlogIndex extends React.Component {
+class WorksIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -66,20 +41,16 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Blog" />
-        {posts.map(({ node }) =>  {
-          const key = node.frontmatter.slug
-          switch (node.frontmatter.type) {
-            case "pic": return <Pic key={key} node={node} />
-            default: return <Blog key={key} node={node} />
-          }
-        })}
+        <SEO title="Works" />
+        {posts.map(({ node }) => 
+          <Work key={node.frontmatter.slug} node={node} />
+        )}
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default WorksIndex
 
 export const pageQuery = graphql`
   query {
@@ -89,7 +60,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content\/blog/" }}
+      filter: { fileAbsolutePath: { regex: "/content\/works/" }}
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -98,16 +69,14 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
-            slug
-            description
-            type
-            pic {
+            logo {
               childImageSharp {
                 fluid(maxHeight: 1000) {
                   ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }
+            url
           }
         }
       }
