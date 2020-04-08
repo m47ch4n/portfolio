@@ -3,7 +3,7 @@ module.exports = {
     title: `m47ch4n's HOME`,
     author: `m47ch4n`,
     description: `A website written by m47ch4n who lives and studies in Aichi.`,
-    siteUrl: `https:/www.m47ch4n.net/`,
+    siteUrl: `https://m47ch4n.net/`,
     social: {
       github: `m47ch4n`,
       gitlab: `m47ch4n`,
