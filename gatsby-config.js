@@ -8,18 +8,12 @@ module.exports = {
       github: `m47ch4n`,
       gitlab: `m47ch4n`,
       twitter: `m47ch4n`,
+      qiita: `m47ch4n`,
       suzuri: `m47ch4n`,
       bookmeter: `1023421`,
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -90,6 +84,5 @@ module.exports = {
         // Add any options here
       },
     },
-    `gatsby-plugin-twitter`,
   ],
 }

@@ -88,21 +88,9 @@ class Index extends React.Component {
           <Right>
             <h1>まつも</h1>
             <h5>Matsumo, Shoya MATSUMOTO, m47ch4n</h5>
-            <h4>An Engineer who lives and studies in Aichi.</h4>
             <p>the pillows を聴いています。</p>
             <Links>
               <h3>
-                <Link
-                  style={{
-                    boxShadow: `none`,
-                    display: "inline-block",
-                    marginLeft: "12px",
-                    marginBottom: "8px",
-                  }}
-                  to="/blog"
-                >
-                  /blog
-                </Link>
                 <Link
                   style={{
                     boxShadow: `none`,
@@ -123,10 +111,15 @@ class Index extends React.Component {
                 <External href={`https://twitter.com/${social.twitter}`}>
                   Twitter
                 </External>
+                <External href={`https://qiita.com/${social.qiita}`}>
+                  Qiita
+                </External>
                 <External href={`https://suzuri.jp/${social.suzuri}`}>
                   Goods
                 </External>
-                <External href={`https://bookmeter.com/users/${social.bookmeter}`}>
+                <External
+                  href={`https://bookmeter.com/users/${social.bookmeter}`}
+                >
                   Reading
                 </External>
               </h3>
@@ -149,6 +142,7 @@ export const pageQuery = graphql`
           github
           gitlab
           twitter
+          qiita
           suzuri
           bookmeter
         }

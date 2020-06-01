@@ -78,9 +78,11 @@ class Layout extends React.Component {
         <header>{header}</header>
         {children}
         <Footer>
-          © {new Date().getFullYear()} {` `}
-          <a href="https://www.m47ch4n.net">m47ch4n</a>, {` `} Built with {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <p>
+            © {new Date().getFullYear()} {` `}
+            m47ch4n, Built with {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </p>
         </Footer>
       </Container>
     )

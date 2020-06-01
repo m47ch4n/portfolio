@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const Work = ({node}) => {
+const Work = ({ node }) => {
   const title = node.frontmatter.title || node.frontmatter.slug
   return (
     <div>
@@ -15,7 +15,7 @@ const Work = ({node}) => {
           marginBottom: rhythm(1 / 4),
         }}
       >
-        <a style={{boxShadow: 'none'}} href={node.frontmatter.url}>
+        <a style={{ boxShadow: "none" }} href={node.frontmatter.url}>
           {title}
         </a>
       </h3>
@@ -42,9 +42,9 @@ class WorksIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Works" />
-        {posts.map(({ node }) => 
+        {posts.map(({ node }) => (
           <Work key={node.frontmatter.title} node={node} />
-        )}
+        ))}
       </Layout>
     )
   }
@@ -60,7 +60,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/works/" }}
+      filter: { fileAbsolutePath: { regex: "/works/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
